@@ -1,0 +1,200 @@
+[33mcommit 8f3742069d617aea9495ce35dd00ef74acf9feb6[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: ednaldocs <ednaldoend007@gmail.com>
+Date:   Tue Oct 31 17:41:44 2023 -0300
+
+    --upload
+
+[1mdiff --git a/.eslintrc.cjs b/.eslintrc.cjs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4dcb439[m
+[1m--- /dev/null[m
+[1m+++ b/.eslintrc.cjs[m
+[36m@@ -0,0 +1,20 @@[m
+[32m+[m[32mmodule.exports = {[m
+[32m+[m[32m  root: true,[m
+[32m+[m[32m  env: { browser: true, es2020: true },[m
+[32m+[m[32m  extends: [[m
+[32m+[m[32m    'eslint:recommended',[m
+[32m+[m[32m    'plugin:react/recommended',[m
+[32m+[m[32m    'plugin:react/jsx-runtime',[m
+[32m+[m[32m    'plugin:react-hooks/recommended',[m
+[32m+[m[32m  ],[m
+[32m+[m[32m  ignorePatterns: ['dist', '.eslintrc.cjs'],[m
+[32m+[m[32m  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },[m
+[32m+[m[32m  settings: { react: { version: '18.2' } },[m
+[32m+[m[32m  plugins: ['react-refresh'],[m
+[32m+[m[32m  rules: {[m
+[32m+[m[32m    'react-refresh/only-export-components': [[m
+[32m+[m[32m      'warn',[m
+[32m+[m[32m      { allowConstantExport: true },[m
+[32m+[m[32m    ],[m
+[32m+[m[32m  },[m
+[32m+[m[32m}[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..87a50fb[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,25 @@[m
+[32m+[m[32m# Logs[m
+[32m+[m[32mlogs[m
+[32m+[m[32m*.log[m
+[32m+[m[32mnpm-debug.log*[m
+[32m+[m[32myarn-debug.log*[m
+[32m+[m[32myarn-error.log*[m
+[32m+[m[32mpnpm-debug.log*[m
+[32m+[m[32mlerna-debug.log*[m
+[32m+[m
+[32m+[m[32mnode_modules[m
+[32m+[m[32m*.env[m
+[32m+[m[32mdist[m
+[32m+[m[32mdist-ssr[m
+[32m+[m[32m*.local[m
+[32m+[m
+[32m+[m[32m# Editor directories and files[m
+[32m+[m[32m.vscode/*[m
+[32m+[m[32m!.vscode/extensions.json[m
+[32m+[m[32m.idea[m
+[32m+[m[32m.DS_Store[m
+[32m+[m[32m*.suo[m
+[32m+[m[32m*.ntvs*[m
+[32m+[m[32m*.njsproj[m
+[32m+[m[32m*.sln[m
+[32m+[m[32m*.sw?[m
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c4a34d1[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,19 @@[m
+[32m+[m[32m<img src='./public/Capturar.PNG' alt="A image of home page" />[m
+[32m+[m
+[32m+[m[32m#[m
+[32m+[m[32m# Place your bets and score your points[m
+[32m+[m
+[32m+[m
+[32m+[m[32m## About[m
+[32m+[m
+[32m+[m[32m     A simple webapp where you can make predictions on Brazilian championship games: Brasileirão and Copa do Brasil[m
+[32m+[m
+[32m+[m
+[32m+[m[32m## Tools[m
+[32m+[m[32m- [React][react][m
+[32m+[m[32m- [NodeJS][node][m
+[32m+[m[32m- [PlaneScale][planetScale][m
+[32m+[m
+[32m+[m[32m[react]: http://reactjs.org/[m
+[32m+[m[32m[node]: http://nodejs.org/en[m
+[32m+[m[32m[planetScale]: http://planetScale.com[m
+\ No newline at end of file[m
+[1mdiff --git a/index.html b/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0c589ec[m
+[1m--- /dev/null[m
+[1m+++ b/index.html[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32m<!doctype html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m  <head>[m
+[32m+[m[32m    <meta charset="UTF-8" />[m
+[32m+[m[32m    <link rel="icon" type="image/svg+xml" href="/vite.svg" />[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+[32m+[m[32m    <title>Vite + React</title>[m
+[32m+[m[32m  </head>[m
+[32m+[m[32m  <body>[m
+[32m+[m[32m    <div id="root"></div>[m
+[32m+[m[32m    <script type="module" src="/src/main.jsx"></script>[m
+[32m+[m[32m  </body>[m
+[32m+[m[32m</html>[m
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5c6a2e0[m
+[1m--- /dev/null[m
+[1m+++ b/package-lock.json[m
+[36m@@ -0,0 +1,6175 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "name": "na-trave",[m
+[32m+[m[32m  "version": "0.0.0",[m
+[32m+[m[32m  "lockfileVersion": 3,[m
+[32m+[m[32m  "requires": true,[m
+[32m+[m[32m  "packages": {[m
+[32m+[m[32m    "": {[m
+[32m+[m[32m      "name": "na-trave",[m
+[32m+[m[32m      "version": "0.0.0",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "date-fns": "^2.30.0",[m
+[32m+[m[32m        "react": "^18.2.0",[m
+[32m+[m[32m        "react-dom": "^18.2.0",[m
+[32m+[m[32m        "react-hot-toast": "^2.4.1",[m
+[32m+[m[32m        "react-icon": "^1.0.0",[m
+[32m+[m[32m        "react-icons": "^4.11.0",[m
+[32m+[m[32m        "react-loading": "^2.0.3",[m
+[32m+[m[32m        "react-query": "^3.39.3",[m
+[32m+[m[32m        "react-router-dom": "^6.16.0",[m
+[32m+[m[32m        "react-toastify": "^9.1.3",[m
+[32m+[m[32m        "react-use": "^17.4.0",[m
+[32m+[m[32m        "styled-components": "^6.0.9"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "devDependencies": {[m
+[32m+[m[32m        "@types/react": "^18.2.15",[m
+[32m+[m[32m        "@types/react-dom": "^18.2.7",[m
+[32m+[m[32m        "@vitejs/plugin-react": "^4.0.3",[m
+[32m+[m[32m        "eslint": "^8.45.0",[m
+[32m+[m[32m        "eslint-plugin-react": "^7.32.2",[m
+[32m+[m[32m        "eslint-plugin-react-hooks": "^4.6.0",[m
+[32m+[m[32m        "eslint-plugin-react-refresh": "^0.4.3",[m
+[32m+[m[32m        "vite": "^4.4.5"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@aashutoshrathi/word-wrap": {[m
+[32m+[m[32m      "version": "1.2.6",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz",[m
+[32m+[m[32m      "integrity": "sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=0.10.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@ampproject/remapping": {[m
+[32m+[m[32m      "version": "2.2.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.2.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "@jridgewell/gen-mapping": "^0.3.0",[m
+[32m+[m[32m        "@jridgewell/trace-mapping": "^0.3.9"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=6.0.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@babel/cli": {[m
+[32m+[m[32m      "version": "7.23.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@babel/cli/-/cli-7.23.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-17E1oSkGk2IwNILM4jtfAvgjt+ohmpfBky8aLerUfYZhiPNg7ca+CRCxZn8QDxwNhV/upsc2VHBCqGFIR+iBfA==",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "@jridgewell/trace-mapping": "^0.3.17",[m
+[32m+[m[32m        "commander": "^4.0.1",[m
+[32m+[m[32m        "convert-source-map": "^2.0.0",[m
+[32m+[m[32m        "fs-readdir-recursive": "^1.1.0",[m
+[32m+[m[32m        "glob": "^7.2.0",[m
+[32m+[m[32m        "make-dir": "^2.1.0",[m
+[32m+[m[32m        "slash": "^2.0.0"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "bin": {[m
+[32m+[m[32m        "babel": "bin/babel.js",[m
+[32m+[m[32m        "babel-external-helpers": "bin/babel-external-helpers.js"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=6.9.0"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "optionalDependencies": {[m
+[32m+[m[32m        "@nicolo-ribaudo/chokidar-2": "2.1.8-no-fsevents.3",[m
+[32m+[m[32m        "chokidar": "^3.4.0"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "peerDependencies": {[m
+[32m+[m[32m        "@babel/core": "^7.0.0-0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@babel/code-frame": {[m
+[32m+[m[32m      "version": "7.22.13",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org

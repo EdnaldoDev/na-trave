@@ -6,7 +6,7 @@
 
 ## About
 
-     A simple webapp where you can make predictions on Brazilian championship games: Brasileirão and Copa do Brasil
+A simple webapp where you can make predictions on Brazilian championship games: Brasileirão and Copa do Brasil
 
 
 ## Tools
