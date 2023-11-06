@@ -20,7 +20,7 @@ export function Bets({game, scoreboard}){
             }))
             navigate('/login?from=dash')
         }else{ 
-           const req=await fetch('http://localhost:3000/bet', {
+           const req=await fetch(`${import.meta.env.VITE_BASE_URL}bet`, {
             method:'post',
             headers:{
                 'Content-Type': 'application/json',
