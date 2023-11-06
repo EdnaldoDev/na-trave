@@ -26,7 +26,6 @@ export const Login=()=>{
             body:JSON.stringify({nickname, password}),
             headers:{
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin':'*'
             }
         })
 
