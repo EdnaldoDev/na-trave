@@ -8,6 +8,14 @@
 
 A simple webapp where you can make predictions on Brazilian championship games: Brasileirão and Copa do Brasil
 
+## Features
+ - [x] Login
+ - [x] SignUp
+ - [x] Bet
+ - [ ] Atualizar os jogos
+ - [ ] Adicionar getay de pagamento
+ - [ ] gerar bilhete de aposta
+  
 
 ## Tools
 - [React][react]
