@@ -29,7 +29,7 @@ export const SignUp=()=>{
         e.preventDefault()
 
         setIsLoading(true)
-        const req=await fetch(`${import.meta.env.VITE_BASE_URL}/signup`, {
+        const req=await fetch(`${import.meta.env.VITE_BASE_URL}signup`, {
             method:'post',
             body:JSON.stringify({
                 email, name, nickname, password

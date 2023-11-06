@@ -23,7 +23,7 @@ export function Dashboard(){
     const [gameDataLocal, setGameDataLocal]=useLocalStorage('games', {})
 
     const [games, doFecth]= useAsyncFn(async ()=> {
-        const req=await fetch(`${import.meta.env.VITE_BASE_URL}/games`)
+        const req=await fetch(`${import.meta.env.VITE_BASE_URL}games`)
     
         const res= await req.json()
         setGameDataLocal(res)

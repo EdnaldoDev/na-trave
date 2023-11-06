@@ -21,7 +21,7 @@ export const Login=()=>{
         e.preventDefault()
         setIsLoading(true)
 
-        const req=await fetch(`${import.meta.env.VITE_BASE_URL}/login`, {
+        const req=await fetch(`${import.meta.env.VITE_BASE_URL}login`, {
             method:'post',
             body:JSON.stringify({nickname, password}),
             headers:{
