@@ -25,7 +25,7 @@ export function Profile(){
     const [myBets, setMyBets]=useLocalStorage('bets', {})
 
     const [bets, doFetch]=useAsyncFn(async()=>{
-        const req=await fetch(`${import.meta.env.VITE_BASE_URL}/mybets`,{
+        const req=await fetch(`${import.meta.env.VITE_BASE_URL}mybets`,{
             method:'get',
             headers:{
                 'Content-Type':'application/json',
