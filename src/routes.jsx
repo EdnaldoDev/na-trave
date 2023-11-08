@@ -8,7 +8,7 @@ import { Component, useState } from "react";
 
 
 export const PrivateRouter = ({ component: Component, isAuth, ...rest }) => {
-    return isAuth ? <Component/> : <Navigate to='/login'/>
+    return isAuth ? <Component title='Pefil'/> : <Navigate to='/login'/>
 };
 
 export function RoutesPath() {
@@ -17,9 +17,9 @@ export function RoutesPath() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signUp" element={<SignUp />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/login" element={<Login title='Login'/>} />
+      <Route path="/signUp" element={<SignUp title='Sign Up'/>} />
+      <Route path="/dashboard" element={<Dashboard title='Dashboard'/>} />
       <Route path="/profile" element={<PrivateRouter component={Profile} isAuth={isAuth} />}/>
     </Routes>
   );

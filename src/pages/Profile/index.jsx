@@ -14,9 +14,11 @@ import { Bets } from '../../components/Bets'
 import { useAsyncFn, useLocalStorage } from 'react-use'
 
 import {FaSignInAlt } from 'react-icons/fa';
+import { documentTitle } from '../../components/Head'
 
 export function Profile(){
-  
+    documentTitle('Dashboard')
+
     const [currentDate, setCurrentDate]=useState(formatISO(new Date('2022-11-21')))
     const [gamesData, setGamesData]=useState([])
     
@@ -41,6 +43,7 @@ export function Profile(){
     })
 
      useEffect(()=>{
+
         if(!bets.value){
             doFetch()
         }

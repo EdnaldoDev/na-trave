@@ -6,8 +6,13 @@ import { Container } from "./styles"
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import Loading from '../../components/Loading'
+import { documentTitle } from '../../components/Head'
 
-export const Login=()=>{
+export const Login=({title})=>{
+
+    documentTitle(title)
+
+
     const [nickname, setNickname]=useState(' ')
     const [password, setPassword]=useState(' ')
     const [isLoading, setIsLoading]=useState(false)

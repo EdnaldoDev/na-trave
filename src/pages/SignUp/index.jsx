@@ -9,10 +9,13 @@ import { useState } from 'react'
 import { useFetch } from '../../hooks/useFetch'
 import { toast } from 'react-toastify'
 import Loading from '../../components/Loading'
+import { documentTitle } from '../../components/Head'
 
 
 
-export const SignUp=()=>{
+export const SignUp=({title})=>{
+    documentTitle(title)
+
     const [isAuth, setIsAutj]=useState((JSON.parse(localStorage.getItem('auth'))?.token || false))
 
     const navigate=useNavigate()

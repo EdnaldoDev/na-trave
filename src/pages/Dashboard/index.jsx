@@ -11,11 +11,14 @@ import { useFetch } from '../../hooks/useFetch'
 import { useQuery } from 'react-query'  
 import { format, formatISO } from 'date-fns'
 import { useAsyncFn, useLocalStorage } from 'react-use'
+import { documentTitle } from '../../components/Head'
 
 
 
 
-export function Dashboard(){
+export function Dashboard({title}){
+
+    documentTitle(title)
 
     const [currentDate, setCurrentDate]=useState(formatISO(new Date('2023-11-20')))
     const [gamesData, setGamesData]=useState([])
